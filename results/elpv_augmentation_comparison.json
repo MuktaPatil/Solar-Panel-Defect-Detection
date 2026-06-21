@@ -1,0 +1,18 @@
+{
+    "original": {
+        "accuracy": 0.8807,
+        "f1": 0.8575,
+        "augmentation": "Minimal (Albumentations with light transforms)"
+    },
+    "matched": {
+        "accuracy": 0.9238578680203046,
+        "f1": 0.9079008882655446,
+        "augmentation": "Matched (Torchvision with heavy transforms)"
+    },
+    "improvement": {
+        "accuracy_abs": 0.04315786802030452,
+        "accuracy_pct": 4.315786802030452,
+        "f1_abs": 0.050400888265544556,
+        "f1_pct": 5.040088826554456
+    }
+}

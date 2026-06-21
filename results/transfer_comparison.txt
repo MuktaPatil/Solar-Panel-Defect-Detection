@@ -1,0 +1,7 @@
+TRANSFER vs BASELINE COMPARISON
+============================================================
+
+Transfer Learning F1: 0.7870
+Baseline F1:          0.8795
+Improvement:          -0.0925
+Relative Improvement: -10.52%

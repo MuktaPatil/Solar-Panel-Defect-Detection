@@ -1,0 +1,43 @@
+{
+    "experiment": "Bidirectional Cross-Modal Transfer Learning",
+    "date": "2025-12-05 02:39:22",
+    "datasets": {
+        "thermal": "PV-Multi-Defect (1,106 images, 6 classes)",
+        "elpv": "ELPV (2,624 images, 2 classes)"
+    },
+    "results": {
+        "thermal_baseline": {
+            "initialization": "ImageNet",
+            "f1_score": 0.9521404786110669,
+            "accuracy": 0.95,
+            "precision": 0.9412165574114973,
+            "recall": 0.9656277783704968,
+            "per_class": {
+                "black_border": 0.975,
+                "broken": 0.7878787878787878,
+                "hot_spot": 0.9967948717948718,
+                "no_electricity": 0.9818181818181818,
+                "normal": 0.9934640522875817,
+                "scratch": 0.9778869778869779
+            }
+        },
+        "forward_transfer": {
+            "direction": "Thermal \u2192 EL",
+            "baseline_f1": 0.848,
+            "transfer_f1": 0.8136,
+            "improvement": -0.0344,
+            "status": "Negative Transfer"
+        },
+        "reverse_transfer": {
+            "direction": "EL \u2192 Thermal",
+            "baseline_f1": 0.9521404786110669,
+            "transfer_f1": 0.9307804650908241,
+            "improvement": -0.02136001352024275,
+            "status": "To be determined by results"
+        }
+    },
+    "conclusions": {
+        "asymmetry": 0.013039986479757251,
+        "recommendation": "Based on results"
+    }
+}

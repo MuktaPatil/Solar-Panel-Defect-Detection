@@ -1,0 +1,101 @@
+================================================================================
+CROSS-MODAL SOLAR PANEL DEFECT DETECTION - FINAL REPORT
+================================================================================
+
+Report Generated: 2025-12-05 04:16:53
+
+PHASE 1: THERMAL CLASSIFICATION (PV-Multi-Defect)
+--------------------------------------------------------------------------------
+Macro Precision: 0.9412
+Macro Recall: 0.9656
+Macro F1-Score: 0.9521
+
+Per-Class Performance:
+  black_border:
+    Precision: 0.9512
+    Recall: 1.0000
+    F1-Score: 0.9750
+    Support: 39
+  broken:
+    Precision: 0.7222
+    Recall: 0.8667
+    F1-Score: 0.7879
+    Support: 15
+  hot_spot:
+    Precision: 0.9968
+    Recall: 0.9968
+    F1-Score: 0.9968
+    Support: 312
+  no_electricity:
+    Precision: 1.0000
+    Recall: 0.9643
+    F1-Score: 0.9818
+    Support: 28
+  normal:
+    Precision: 0.9870
+    Recall: 1.0000
+    F1-Score: 0.9935
+    Support: 76
+  scratch:
+    Precision: 0.9900
+    Recall: 0.9660
+    F1-Score: 0.9779
+    Support: 206
+
+Training Epochs: 22
+Best Validation Accuracy: 0.9940
+Final Training Loss: 0.0546
+Final Validation Loss: 0.0209
+
+PHASE 2: CROSS-MODAL TRANSFER LEARNING (ELPV)
+--------------------------------------------------------------------------------
+Transfer Learning Model (Thermal -> ELPV):
+  Training Epochs: 30
+  Best Validation Accuracy: 0.8528
+  Final Training Loss: 0.4212
+  Final Validation Loss: 0.2849
+
+Baseline Model (Trained from scratch on ELPV):
+  Training Epochs: 19
+  Best Validation Accuracy: 0.9061
+  Final Training Loss: 0.2872
+  Final Validation Loss: 0.2512
+
+Transfer Learning vs Baseline Comparison:
+  Transfer Best Val Acc: 0.8528
+  Baseline Best Val Acc: 0.9061
+  Absolute Improvement: -0.0533
+  Relative Improvement: -5.88%
+  ✗ Transfer learning did NOT improve performance
+
+PHASE 3: GRAD-CAM EXPLAINABILITY
+--------------------------------------------------------------------------------
+Grad-CAM validation results not found.
+
+================================================================================
+DATASET STATISTICS
+================================================================================
+PV-Multi-Defect (Thermal) Dataset:
+  hot_spot: 1455 samples
+  scratch: 956 samples
+  no_electricity: 126 samples
+  black_border: 179 samples
+  broken: 68 samples
+  normal: 349 samples
+  Total training samples: 3133
+
+ELPV Dataset:
+  functional: 1262 samples
+  defective: 574 samples
+  Total training samples: 1836
+
+================================================================================
+KEY FINDINGS
+================================================================================
+1. Thermal defect classification achieved 95.21% macro F1-score
+2. Worst-case recall across all defect types: 86.67%
+3. Transfer learning showed minimal benefit (-5.33% change)
+
+================================================================================
+END OF REPORT
+================================================================================
